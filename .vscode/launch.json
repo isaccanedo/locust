@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run current file",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "gevent": true
+        },
+        {
+            "name": "Run current locust scenario headless",
+            "type": "python",
+            "request": "launch",
+            "module": "locust",
+            "args": [
+                "-f",
+                "${file}",
+                "--headless",
+                "--users=5"
+            ],
+            "console": "integratedTerminal",
+            "gevent": true
+        },
+        {
+            "name": "Run current locust scenario, autostart",
+            "type": "python",
+            "request": "launch",
+            "module": "locust",
+            "args": [
+                "-f",
+                "${file}",
+                "--users=5",
+                "--autostart",
+                "--print-stats",
+                "-L=ERROR"
+            ],
+            "console": "integratedTerminal",
+            "gevent": true
+        }
+    ]
+}
